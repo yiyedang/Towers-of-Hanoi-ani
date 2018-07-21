@@ -7,7 +7,7 @@ import turtle
 from Stack import Stack
 
 class Disk:
-    def __init__(self, color, shape, width, x, y):
+    def __init__(self, color, shape, width, x, y, speed):
         self.x = x
         self.y = y
         self.shape = shape
@@ -15,7 +15,7 @@ class Disk:
         self.t = turtle.Turtle()
         self.height = 20
         self.width = width
-        self.t.speed(0)
+        self.t.speed(speed)
         self.moveto(x, y)
     def moveto(self, x, y):
         self.t.up()
@@ -89,11 +89,12 @@ colormap = ['#FE007F','#96D7A0','#F88379','#ABE3E5','#C5A3FF',
                 '#6FC0AB','#FFB114', '#F3F298', '#F8C5D0']
 disks = []
 n = int(input("How many disks would you like to have? (0 < n < 10) "))
-
+s = int(input("How fast would you like to move the disks? (0 < speed < 10, 0 is the fastest)")
+        
 for i in range(n, 0, -1):
     width = 10 * (i + 1)
     wn.register_shape('rectangle' + str(i), ((-10,-width),(-10,width),(10,width),(10,-width)))
-    t = Disk(colormap[i - 1], 'rectangle' + str(i), 20 *(i + 1), -220, -60 + 20*(n-i))
+    t = Disk(colormap[i - 1], 'rectangle' + str(i), 20 *(i + 1), -220, -60 + 20*(n-i), s)
     disks.insert(0, t)
 
 source = Pole(-220)
