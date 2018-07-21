@@ -1,2 +1,2 @@
 # Towers-of-Hanoi-demo
-Recursive solution demo of the game Towers of Hanoi.
+Demo of the game Towers of Hanoi using recursive solution. This demo makes use of Python Turtle Graphics.
